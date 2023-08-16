@@ -1359,3 +1359,48 @@ video {
     transition-property: none;
   }
 }
+
+/*my own stuff
+*/
+/* (A) RESPONSIVE IMAGE */
+.fullwrap img { width: 100%; }
+.fullwrap {
+  position: relative; /* required for (b1) */
+}
+ 
+/* (B) POSITION CAPTION */
+.imagehover {
+  /* (B1) COVER OVER ENTIRE IMAGE */
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 28px;
+ 
+  /* (B2) CENTER CONTENT */
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+ 
+/* (C) ONLY SHOW CAPTION ON HOVER */
+.imagehover {
+  visibility: none; 
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.fullwrap:hover .imagehover {
+  visibility: visible; 
+  opacity: 1;
+}
+
+.md\:w-1\/3 {
+  width: 33.33%;
+}
+
+.w-third {
+  width: 33%;
+}
