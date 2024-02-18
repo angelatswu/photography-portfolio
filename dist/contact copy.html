@@ -1,3 +1,31 @@
+<style>
+  input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
@@ -79,32 +107,20 @@
         <div class="max-w-screen-md">
           <h1 class="text-4xl pt-10 pb-8"><b>CONTACT</b></h1>
 
-          <form class="space-y-8" method="POST" data-netlify="true" action="last.html" netlify>
-            <div>
-              <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                name</label>
-              <input type="name" id="name"
-                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="First and last name" required />
-            </div>
-            <div>
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                email</label>
-              <input type="email" id="email"
-                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="example@gmail.com" required />
-            </div>
-            <div class="sm:col-span-2">
-              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
-                message</label>
-              <textarea id="message" rows="6"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-900 dark:border-neutral-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Leave a comment..." required></textarea>
-            </div>
-            <button type="submit"
-              class="py-3 px-5 text-sm font-medium text-center bg-black dark:bg-white text-white dark:text-black rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-              Send message
-            </button>
+          <form name="contact" method="POST" data-netlify="true" action="/success">
+            <p>
+              <label>Your Name: <input type="text" name="name" required/></label>
+            </p>
+            <p>
+              <label>Your Email: <input type="text" name="email" required/></label>
+            </p>
+            <p>
+              <label>Message: <textarea name="message" style="height:200px" required></textarea></label>
+            </p>
+            
+            <p>
+              <input type="submit" value="Submit">
+            </p>
           </form>
         </div>
       </section>
